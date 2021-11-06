@@ -1,0 +1,55 @@
+{
+  "name": "vue3-starter",
+  "private": true,
+  "scripts": {
+    "prepare:husky": "mkdir -p .husky && husky add .husky/pre-commit \"cross-env PRE_COMMIT=true lint-staged\"",
+    "start:dev": "vite --port 3333 --open",
+    "build": "cross-env vite build",
+    "build:prod": "cross-env NODE_ENV=production vite build",
+    "preview": "vite preview",
+    "lint:eslint": "eslint --fix",
+    "lint:prettier": "prettier --write --loglevel warn",
+    "lint:all:eslint": "yarn lint:eslint --ext .js,.ts,.vue .",
+    "lint:all:prettier": "yarn lint:prettier \"**/*.{js,ts,json,css,scss,vue,html,md}\"",
+    "lint": "run-s lint:all:*"
+  },
+  "dependencies": {
+    "@vueuse/core": "^6.7.4",
+    "vue": "^3.2.20",
+    "vue-demi": "^0.12.0",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.9.0",
+    "@iconify-json/carbon": "^1.0.3",
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@unocss/preset-icons": "^0.4.9",
+    "@unocss/reset": "^0.4.9",
+    "@vitejs/plugin-vue": "^1.9.2",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^7.0.0",
+    "imagemin-lint-staged": "^0.4.0",
+    "lint-staged": "^11.0.1",
+    "prettier": "^1.19.1",
+    "pnpm": "^6.20.1",
+    "typescript": "^4.4.4",
+    "unocss": "^0.4.9",
+    "unplugin-auto-import": "^0.4.13",
+    "unplugin-icons": "^0.12.17",
+    "unplugin-vue-components": "^0.17.0",
+    "vite": "^2.6.13",
+    "vite-plugin-pages": "^0.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
+    }
+  }
+}
